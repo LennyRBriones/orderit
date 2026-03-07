@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew build -x test)",
+      "Bash(/opt/homebrew/opt/postgresql@17/bin/psql -d orderit -c \"SELECT current_user;\")",
+      "Bash(/opt/homebrew/opt/postgresql@17/bin/psql -d orderit -c \"\\\\dt\")"
+    ]
+  }
+}
