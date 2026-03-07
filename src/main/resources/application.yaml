@@ -3,4 +3,10 @@ ktor:
     modules:
       - com.orderit.ApplicationKt.module
   deployment:
-    port: 8080
+    port: ${PORT:8080}
+
+database:
+  url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/orderit}
+  driver: org.postgresql.Driver
+  user: ${DATABASE_USER:lennyrbriones}
+  password: ${DATABASE_PASSWORD:}
