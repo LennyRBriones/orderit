@@ -21,11 +21,10 @@ fun Application.configureDatabaseFactory() {
         password = password
     )
 
-    val tables = arrayOf(OrderDetails, Orders, Products, Categories, DiningTables, Waiters)
-
     transaction {
-        SchemaUtils.drop(*tables)
-        SchemaUtils.create(Waiters, Categories, Products, DiningTables, Orders, OrderDetails)
+        SchemaUtils.createMissingTablesAndColumns(
+            Waiters, Categories, Products, DiningTables, Orders, OrderDetails
+        )
     }
 
     log.info("Database connected and tables created successfully")
